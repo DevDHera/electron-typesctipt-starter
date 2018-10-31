@@ -1,0 +1,16 @@
+{
+  "name": "shoppinglist",
+  "version": "1.0.0",
+  "description": "Shopping List desktop app",
+  "main": "main.js",
+  "scripts": {
+    "tsc": "tsc src/main.ts --outDir ../dist",
+    "start": "tsc && electron dist/main.js"
+  },
+  "author": "Devin Herath",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "electron": "3.0.6"
+  }
+}
