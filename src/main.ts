@@ -1,12 +1,8 @@
 import { app, BrowserWindow } from 'electron';
 import * as url from 'url';
 import * as path from 'path';
-// const electron = require('electron');
-// const url = require('url');
-// const path = require('path');
 
-// const { app, BrowserWindow } = electron;
-
+// Declare mainWindow variable
 let mainWindow;
 
 // Listen for app to be ready
