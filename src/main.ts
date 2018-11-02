@@ -2,6 +2,7 @@ import { app, BrowserWindow } from 'electron';
 import * as url from 'url';
 import * as path from 'path';
 
+// Declare mainWindow variable
 let mainWindow;
 
 // Listen for app to be ready
