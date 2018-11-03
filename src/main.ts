@@ -1,4 +1,4 @@
-import { app, BrowserWindow } from 'electron';
+import { app, BrowserWindow, Menu } from 'electron';
 import * as url from 'url';
 import * as path from 'path';
 
@@ -16,4 +16,17 @@ app.on('ready', () => {
         protocol: 'file:',
         slashes: true
     }));
+
+    // Build Menu from Template
+    const mainMenu = Menu.buildFromTemplate(mainMenuTemplate);
+
+    // Insert the Menu
+    Menu.setApplicationMenu(mainMenu);
 })
+
+// Create Menu Template
+const mainMenuTemplate = [
+    {
+        label: 'File'
+    }
+]
