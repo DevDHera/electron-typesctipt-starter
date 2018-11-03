@@ -1,4 +1,4 @@
-import { app, BrowserWindow, Menu } from 'electron';
+import { app, BrowserWindow, Menu, ipcMain } from 'electron';
 import * as url from 'url';
 import * as path from 'path';
 
@@ -51,6 +51,12 @@ const createAddWindow = () => {
         addWindow = null;
     })
 }
+
+// Catch item:add
+ipcMain.on('item:add', (e, item) => {
+    mainWindow.webContents.send('item:add', item);
+    addWindow.close();
+});
 
 
 // Create Menu Template
