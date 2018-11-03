@@ -5,7 +5,10 @@
   "main": "main.js",
   "scripts": {
     "tsc": "tsc src/main.ts --outDir ../dist",
-    "start": "tsc && electron dist/main.js"
+    "start": "tsc && electron dist/main.js",
+    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=assets/icons/mac/icon.icns --prune=true --out=release-builds",
+    "package-win": "electron-packager . shopping-list --overwrite --asar=true --platform=win32 --arch=ia32 --icon=assets/icons/win/icon.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"Shopping List\"",
+    "package-linux": "electron-packager . shopping-list --overwrite --asar=true --platform=linux --arch=x64 --icon=assets/icons/png/icon.png --prune=true --out=release-builds"
   },
   "author": "Devin Herath",
   "license": "MIT",
@@ -13,6 +16,7 @@
     "materialize-css": "^1.0.0-rc.2"
   },
   "devDependencies": {
-    "electron": "3.0.6"
+    "electron": "3.0.6",
+    "electron-packager": "^12.2.0"
   }
 }
