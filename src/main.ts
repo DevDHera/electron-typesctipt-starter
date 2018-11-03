@@ -45,11 +45,16 @@ const createAddWindow = () => {
         protocol: 'file:',
         slashes: true
     }));
+
+    // Garbage Collection
+    addWindow.on('close', () => {
+        addWindow = null;
+    })
 }
 
 
 // Create Menu Template
-const mainMenuTemplate = [
+const mainMenuTemplate: any = [
     {
         label: 'File',
         submenu: [
@@ -72,3 +77,8 @@ const mainMenuTemplate = [
         ]
     }
 ]
+
+// If Mac, add empty object to menu
+if (process.platform == 'darwin') {
+    mainMenuTemplate.unshift({});
+}
