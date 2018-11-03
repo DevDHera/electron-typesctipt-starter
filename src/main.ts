@@ -82,3 +82,22 @@ const mainMenuTemplate: any = [
 if (process.platform == 'darwin') {
     mainMenuTemplate.unshift({});
 }
+
+// Add developer tools
+if (process.env.NODE_ENV !== 'production') {
+    mainMenuTemplate.push({
+        label: 'Developer Tools',
+        submenu: [
+            {
+                label: 'Toggle DevTools',
+                accelerator: process.platform == 'darwin' ? 'Command+I' : 'Ctrl+I',
+                click(item, focusedWindow) {
+                    focusedWindow.toggleDevTools();
+                }
+            },
+            {
+                role: 'reload'
+            }
+        ]
+    })
+}
