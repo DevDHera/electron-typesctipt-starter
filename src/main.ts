@@ -2,6 +2,9 @@ import { app, BrowserWindow, Menu, ipcMain } from 'electron';
 import * as url from 'url';
 import * as path from 'path';
 
+// Set Environment
+process.env.NODE_ENV = 'production';
+
 // Declare mainWindow variable
 let mainWindow;
 let addWindow;
