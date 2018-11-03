@@ -9,7 +9,9 @@
   },
   "author": "Devin Herath",
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "materialize-css": "^1.0.0-rc.2"
+  },
   "devDependencies": {
     "electron": "3.0.6"
   }
